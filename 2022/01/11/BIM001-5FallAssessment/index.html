@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/images/logo.png"/>
+	<link rel="shortcut icon" href="/images/logo.png">
+	
+			    <title>
+    Chengyang's House
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Chengyang, Zhou Chengyang, Chengyang Zhou, 周成扬" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.png') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo"></a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="About">
+		                About
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/zhoulele12" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="linkedin" href="https://www.linkedin.com/in/zhouchengyang/" target="_blank" rel="noopener">
+                            <i class="icon fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 23rem;background-image: url(/2022/01/11/BIM001-5FallAssessment/BIM001-5.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >BIM001.5-Fall-Assessment</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>(This project is part of the Duke EGR101 class in Fall 2021. Contributed by Chengyang Zhou, Eric Song, Arsh Banipal, Bill Zheng, Darren Wu. Supervised by Dr Nan Jokerst and Wizeview. Inc)</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/test.gif" class="">
+
+
+<p>Falls currently present a major health issue for older adults in society. In 2015, <strong>50 billion</strong> dollars of medical bills were attributed to elderly falls. (<a target="_blank" rel="noopener" href="https://www.cdc.gov/falls/data/fall-cost.html">CDC, 2015</a>)</p>
+<p>The risk of falling can be readily lowered through the implementation of fall risk assessments (FRAs). However, current <strong>manual</strong> assessments of fall risks exhaust valuable time and resources. While there have been attempts to streamline FRAs onto unsupervised platforms that do not require oversight by a healthcare professional, existing solutions often require specialized, extraneous equipment. </p>
+<p>Wizeview, a US-based healthcare startup, aims to combat this issue. Therefore, the objective of this project is to help WizeView develop an <strong>unsupervised Fall Risk Assessment system</strong> that is accessible, low-cost, portable, efficient, and robust, enabling caregivers to provide accurate FRA scoring for elderly adults aged 65 years and above. </p>
+<p>The Center for Disease Control and Prevention (CDC) recommends 3 standard fall risk assessments. The target assessment of this project is the <a target="_blank" rel="noopener" href="https://www.cdc.gov/steadi/pdf/STEADI-Assessment-30Sec-508.pdf"><strong>30 Second Chair Stand Test</strong></a>. </p>
+<p>Here is how to conduct this test manually: </p>
+<img src="/2022/01/11/BIM001-5FallAssessment/instruction.png" class="">
+
+
+<h1 id="Design-Criteria"><a href="#Design-Criteria" class="headerlink" title="Design Criteria"></a><strong>Design Criteria</strong></h1><p>Here are some criteria which must be met in order for this project to be a success.</p>
+<ol>
+<li><strong>1.Accuracy</strong>: within ±10% of accurate results determined by manual counting.</li>
+<li><strong>2.Robustness</strong>: our software should perform under different lighting conditions and backgrounds.</li>
+<li><strong>3.Accessibility</strong>: such that our target audience (elderly) can operate without assistance. </li>
+<li><strong>4. Speed</strong>: real-time counting is preferred.</li>
+</ol>
+<h1 id="Overall-Design"><a href="#Overall-Design" class="headerlink" title="Overall Design"></a><strong>Overall Design</strong></h1><p>Fancy version of the approach: Pose-detection-based Sit-stand Classification using Computer Vision<br>TL,DR: Count sits and stands using AI</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/overall.png" class="">
+
+<h1 id="Pose-Detection"><a href="#Pose-Detection" class="headerlink" title="Pose Detection"></a><strong>Pose Detection</strong></h1><p>We used the <a target="_blank" rel="noopener" href="https://google.github.io/mediapipe">Mediapipe</a> machine learning platform by Google. It incorporates a pose detection algorithm which skeletonizes a person to a set of key points.</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/mediapipe.gif" class="">
+
+<p>When we apply this algorithm to a sitting and standing respectively, we observe a conspicuous difference in the “stick-figures”generated, especially in the leg portion. (highlighted in red)</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/sit-stand-annotated.png" class="">
+
+<p>In technical terms, this distinction in feature vectors (in terms of leg orientations/knee angles) would be reflected in the high-dimensional space, making classification possible.</p>
+<p>Note: since our classification relies heavily on the knee angles, patients should be asked to sit at an angle(30-60 degrees) from the camera.</p>
+<h1 id="Sit-stand-Classification"><a href="#Sit-stand-Classification" class="headerlink" title="Sit-stand Classification"></a><strong>Sit-stand Classification</strong></h1><p>We chose to use an exteremely simple K-nearest-neighbour (KNN) classifier for the following reasons:</p>
+<ol>
+<li><strong>Easy to train</strong>: since every patient has different body sizes and is tested under different lighting conditions, we need to train a new classifier on the spot.<br>This requires the training/calibration process to be as quick as possible.</li>
+<li><strong>Quick inference</strong>: every frame of the video input will be passed into this classfier, so we should minimize the time for our model to output a prediction. </li>
+<li><strong>Simple task</strong>: As illustrated, the feature vectors are easily distinguishable, so a 20-million-parameter Inception-ResNext would be an overkill.</li>
+</ol>
+<h1 id="Final-Product"><a href="#Final-Product" class="headerlink" title="Final Product"></a><strong>Final Product</strong></h1><p>We used the python <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/tkinter.html">tkinter</a> library to build a simple Window-based interface.<br>Welcome to Fall Assessment V1.13!</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/interface-p1.PNG" class="">
+
+<p>Click START, we come to the Instructions page, showing the elderly how to get ready for calibration.</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/interface-instruction.png" class="">
+
+<p>Click next, we have the calibration page. Using the respective buttons, we take 10 pictures of the patient fully standing, and 10 fully seated. Clicking next will commence the classifier training,(takes &lt;5s), and proceed to the pretest page.</p>
+<img src="/2022/01/11/BIM001-5FallAssessment/calibration.gif" class="">
+
+<p>When the patient is ready, click Start!!! The video input is fed into our pipeline of algorithms, first skeletonizie using Mediapipe, the classify using the pre-trained KNN-classifier. We threshold the confidence score, thus detecting every stand and sit. </p>
+<img src="/2022/01/11/BIM001-5FallAssessment/test.gif" class="">
+
+<p>Yay! Now we have an accurate and automated fall assessment system!</p>
+<p>Demo on Youtube:</p>
+<iframe src="https://www.youtube.com/embed/zJ5rkGHU1FA" allowfullscreen frameborder="0" height="225," width="300," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                &copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2022 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

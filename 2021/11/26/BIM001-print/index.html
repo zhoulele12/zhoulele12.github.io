@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/images/logo.png"/>
+	<link rel="shortcut icon" href="/images/logo.png">
+	
+			    <title>
+    Chengyang's House
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Chengyang, Zhou Chengyang, Chengyang Zhou, 周成扬" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.png') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo"></a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="About">
+		                About
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/zhoulele12" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="linkedin" href="https://www.linkedin.com/in/zhouchengyang/" target="_blank" rel="noopener">
+                            <i class="icon fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 23rem;background-image: url(/2021/11/26/BIM001-print/BIM001.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >BIM001-print</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <img src="/2021/11/26/BIM001-print/demo.gif" class="">
+
+
+<p>The door locks of the Duke dorms annoy everyone. They are designed to be opened by either 1.phone tapping <strong>AND</strong> entering a password, or 2.using a key. Major hassle. Gotta bring our keys to toilet, shower, basically whenever we leave our rooms. And not surprisingly, people forgot their keys all the time, and had to knock on the RA’s door at 3AM and beg,”can you plsssss open my door for me. I am soooooo sorry”</p>
+<p>The school even wasted money to put up reminders like this:</p>
+<img src="/2021/11/26/BIM001-print/sign.png" class="">
+
+<p>To solve this problem, I decided to make a <strong>fingerprint lock</strong>. It is low-cost, safe, and no more key problems!</p>
+<h2 id="Design-Criteria"><a href="#Design-Criteria" class="headerlink" title="Design Criteria"></a><strong>Design Criteria</strong></h2><p>Here are some criteria which must be met in order for this project to be a success.</p>
+<ol>
+<li><strong>1.Safety</strong>: fingerprints other than mine and my roomates’should not open my door (low false accept rate).</li>
+<li><strong>2.Speed</strong>: opens in &lt;1s: I do not wanna be spending 5 seconds just to open the door when I am late for class.</li>
+<li><strong>3.Durable</strong>: would be annoying if it needs constant fixing.</li>
+<li><strong>4.Does not alter the original lock</strong>: such that no trouble from the school and the facility guys.</li>
+</ol>
+<h2 id="Overall-Design"><a href="#Overall-Design" class="headerlink" title="Overall Design"></a><strong>Overall Design</strong></h2><img src="/2021/11/26/BIM001-print/overall-design.png" class="">
+
+<p>What we have here is a simple and classic sensor-MCU-actuator workflow. The fingerprint sensor verifies the identity of the fingerprint, sends input to the Arduino, which instructs the servo horn to rotate, pulling down a wire that is tied to the door handle. Open sesame!</p>
+<h3 id="Sensor"><a href="#Sensor" class="headerlink" title="Sensor"></a><strong>Sensor</strong></h3><img src="/2021/11/26/BIM001-print/sensor.jpg" class="">
+<p>I used the Arduino 6-pin green-light optical fingerprint module (FPM11A, costs $17.99 on Amazon). It comes with <a target="_blank" rel="noopener" href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-optical-fingerprint-sensor.pdf"><strong>this nice little guide</strong></a> that helped me tremendously with wiring. It is also compatible with the Adafruit Fingerprint library which has all the code needed to register and verify fingerprints.</p>
+<h3 id="Actuator"><a href="#Actuator" class="headerlink" title="Actuator"></a><strong>Actuator</strong></h3><p>We need a powerful motor, and we need decent positional accuracy (to rotate to the exact position that opens the door). Servo motors are perfect for this job. <a target="_blank" rel="noopener" href="https://www.rchelicopterfun.com/rc-servos.html"><strong>Here</strong></a> is a starter guide to servo motors.</p>
+<p>However, our door handle is heavy, so those mg996r and sg90 servos you find in the lab are not enough for this job. I got the ds5160ssg servo which outputs a cracy torque of <strong>70kg/cm</strong> at top voltage (8.4v), which dwarfs the 10kg/cm of mg996r. Plus, it only costs $36.99.</p>
+<img src="/2021/11/26/BIM001-print/servo.jpg" class="">
+
+<h2 id="Circuit"><a href="#Circuit" class="headerlink" title="Circuit"></a><strong>Circuit</strong></h2><img src="/2021/11/26/BIM001-print/circuit.jpg" class="">
+
+<p>See the circuit diagram above. For fingerprint sensor, 4 of the 6 pins are used, which are connected to 5v, GND, digital 2 and 3 respectively. For servo, the three pins are connected to the 9v power, GND, and digital 9 respecitvely.</p>
+<h2 id="3D-printed-casing"><a href="#3D-printed-casing" class="headerlink" title="3D-printed casing"></a><strong>3D-printed casing</strong></h2><p>All these components and wires are not very aesthetically pleasing, so it will be nice if we 3D-print a casing to conceal our servo and Arduino. Moreover, this case should include features that tightly secures the boards and wires in place. </p>
+<p>Here is the design. </p>
+<h3 id="Top-part-lid"><a href="#Top-part-lid" class="headerlink" title="Top part (lid):"></a><strong>Top part (lid):</strong></h3><img src="/2021/11/26/BIM001-print/top.png" class="">
+
+<h3 id="Bottom-part"><a href="#Bottom-part" class="headerlink" title="Bottom part:"></a><strong>Bottom part:</strong></h3><img src="/2021/11/26/BIM001-print/bottom.png" class="">
+
+<h3 id="Complete-view"><a href="#Complete-view" class="headerlink" title="Complete view:"></a><strong>Complete view:</strong></h3><img src="/2021/11/26/BIM001-print/complete.png" class="">
+
+<h3 id="Assembled-product"><a href="#Assembled-product" class="headerlink" title="Assembled product:"></a><strong>Assembled product:</strong></h3><img src="/2021/11/26/BIM001-print/printed-2.png" class="">
+<img src="/2021/11/26/BIM001-print/printed-1.png" class="">
+
+<h3 id="Installation-onto-the-door"><a href="#Installation-onto-the-door" class="headerlink" title="Installation onto the door:"></a><strong>Installation onto the door:</strong></h3><img src="/2021/11/26/BIM001-print/installation.jpg" class="">
+
+<h3 id="Now-we-have-a-working-fingerprint-lock-Easy"><a href="#Now-we-have-a-working-fingerprint-lock-Easy" class="headerlink" title="Now we have a working fingerprint lock! Easy."></a>Now we have a working fingerprint lock! Easy.</h3><h2 id="Clickable-Resouces"><a href="#Clickable-Resouces" class="headerlink" title="Clickable Resouces"></a>Clickable Resouces</h2><p><a target="_blank" rel="noopener" href="https://github.com/zhoulele12/001Print">Arduino code</a><br><a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/116h2M6pUJH9XmbV62vJUQQ861-HEPSDB?usp=sharing">Fusion 360 project files</a><br><a target="_blank" rel="noopener" href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-optical-fingerprint-sensor.pdf">Fingerprint sensor guide</a><br><a target="_blank" rel="noopener" href="https://www.rchelicopterfun.com/rc-servos.html">Servo guide</a></p>
+<p>Demo on Youtube:</p>
+<iframe src="https://www.youtube.com/embed/yhjg-eMLZ5Y" allowfullscreen frameborder="0" height="225," width="300," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                &copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2022 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
